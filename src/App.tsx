@@ -42,20 +42,62 @@ function App() {
           variants={fadeIn}
           transition={{ duration: 0.6 }}
         >
-          <Shield className="w-16 h-16 mx-auto mb-8 text-blue-500" />
-          <h1 className="text-5xl font-bold mb-6">
-            Protect Your Clipboard.<br />Defend Your Digital World.
-          </h1>
-          <p className="text-xl mb-8 opacity-80">
-            Real-time clipboard and screen threat detection powered by AI.
-          </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-blue-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-600 transition-colors"
+          <motion.div
+            animate={{ 
+              rotate: [0, 5, -5, 0],
+              scale: [1, 1.1, 1]
+            }}
+            transition={{ 
+              duration: 2,
+              repeat: Infinity,
+              repeatType: "reverse"
+            }}
           >
-            Try ClipSafe Free
-          </motion.button>
+            <Shield className="w-16 h-16 mx-auto mb-8 text-blue-500" />
+          </motion.div>
+          <motion.h1 
+            className="text-5xl font-bold mb-6"
+            animate={{ 
+              backgroundPosition: ["0%", "100%"],
+              backgroundSize: ["100%", "100%"]
+            }}
+            transition={{ 
+              duration: 8,
+              repeat: Infinity,
+              repeatType: "reverse"
+            }}
+            style={{
+              backgroundClip: "text",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundImage: "linear-gradient(90deg, #3B82F6, #1E40AF, #3B82F6)"
+            }}
+          >
+            Protect Your Clipboard.<br />Defend Your Digital World.
+          </motion.h1>
+          <motion.p 
+            className="text-xl mb-8 opacity-80"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.8 }}
+            transition={{ delay: 0.8, duration: 1 }}
+          >
+            Real-time clipboard and screen threat detection powered by AI.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.5 }}
+            className="flex justify-center items-center space-x-4"
+          >
+            <div className={`px-4 py-2 rounded-lg ${isDark ? 'bg-gray-800' : 'bg-gray-100'}`}>
+              <Check className="w-5 h-5 inline-block text-green-500 mr-2" />
+              <span className="text-sm">Advanced AI Protection</span>
+            </div>
+            <div className={`px-4 py-2 rounded-lg ${isDark ? 'bg-gray-800' : 'bg-gray-100'}`}>
+              <Check className="w-5 h-5 inline-block text-green-500 mr-2" />
+              <span className="text-sm">Real-time Monitoring</span>
+            </div>
+          </motion.div>
         </motion.div>
       </section>
 
@@ -117,7 +159,7 @@ function App() {
               className="rounded-xl overflow-hidden shadow-lg"
             >
               <img
-                src="https://images.unsplash.com/photo-1607706189992-eae578626c86?auto=format&fit=crop&w=2000&q=80"
+                src="src/screenshot1.png"
                 alt="ClipSafe Dashboard"
                 className="w-full h-[400px] object-cover"
               />
@@ -127,7 +169,7 @@ function App() {
               className="rounded-xl overflow-hidden shadow-lg"
             >
               <img
-                src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=2000&q=80"
+                src='src/screenshot3.png'
                 alt="ClipSafe Security Analysis"
                 className="w-full h-[400px] object-cover"
               />
