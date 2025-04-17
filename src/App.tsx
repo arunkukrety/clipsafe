@@ -159,7 +159,7 @@ function App() {
               className="rounded-xl overflow-hidden shadow-lg"
             >
               <img
-                src="src/screenshot1.png"
+                src="screenshot1.png"
                 alt="ClipSafe Dashboard"
                 className="w-full h-[400px] object-cover"
               />
@@ -169,7 +169,7 @@ function App() {
               className="rounded-xl overflow-hidden shadow-lg"
             >
               <img
-                src='src/screenshot3.png'
+                src='screenshot3.png'
                 alt="ClipSafe Security Analysis"
                 className="w-full h-[400px] object-cover"
               />
